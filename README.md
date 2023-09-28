@@ -1,7 +1,4 @@
 # <p align = "center"> Apple Vision Pro Website Clone</p>
-# Apple-Vision-Pro 
-  
- ![Apple Vision Pro Clone](https://your-repo-url.com/cover-image.png) 
   
  Welcome to the innovative world of Apple Vision Pro – where technology meets vision in a harmonious blend of creativity and functionality. This website is your gateway to a revolutionary experience that redefines how you see and interact with the world around you. 
   
