@@ -1,8 +1,8 @@
-## Apple Vision Pro Website Clone
+# Apple Vision Pro Website Clone
   
 Welcome to the innovative world of Apple Vision Pro – where technology meets vision in a harmonious blend of creativity and functionality. This website is your gateway to a revolutionary experience that redefines how you see and interact with the world around you. 
   
- ## Project Overview 
+ # Project Overview 
   
  This project is a clone of the homepage of Apple Vision Pro website, aiming to replicate the design and functionality using the following technologies: 
   
@@ -13,7 +13,7 @@ Welcome to the innovative world of Apple Vision Pro – where technology meets v
  - GSAP (GreenSock Animation Platform): For smooth animations. 
  - Locomotive Scroll: Creating a smooth scroll experience. 
   
- ## Installation and Usage 
+ # Installation and Usage 
   
  To run this project locally, follow these steps: 
   
@@ -34,7 +34,7 @@ Welcome to the innovative world of Apple Vision Pro – where technology meets v
  ## Credits 
  Apple Vision Pro original website: https://www.apple.com/apple-vision-pro/ 
 
-## <p align = "center">Website Layout :</p>
+# <p align = "center">Website Layout :</p>
 
 <br><br>
 
