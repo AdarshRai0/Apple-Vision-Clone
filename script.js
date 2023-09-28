@@ -878,3 +878,31 @@ var tl17 = gsap.timeline({
 tl17.to(".page17 h1", {
   opacity :1
 })
+// inspect prevention
+document.oncontextmenu = () =>{
+  // alert("Don't try right click")
+
+  return false;
+}
+
+document.onkeydown = e =>{
+  if(e.key == "F12"){
+    // alert("Don't try to inspect elements")
+
+    return false;
+  }
+  if(e.ctrlKey && e.key == "u"){
+    // alert("Don't try to view page source")
+
+    return false;
+  }
+  if(e.ctrlKey && e.key == "c"){
+    // alert("Don't try to copy anything to page")
+
+    return false;
+  }
+  if(e.ctrlKey && e.key == "v"){
+    // alert("Don't try to paste anything to page")
+    return false;
+  }
+}
