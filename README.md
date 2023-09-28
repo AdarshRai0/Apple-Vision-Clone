@@ -1,8 +1,40 @@
-# <p align = "center"> Apple Vision Pro Website Clone</p>
+# Apple Vision Pro Website Clone
+  
+Welcome to the innovative world of Apple Vision Pro – where technology meets vision in a harmonious blend of creativity and functionality. This website is your gateway to a revolutionary experience that redefines how you see and interact with the world around you. 
+  
+ # Project Overview 
+  
+ This project is a clone of the homepage of Apple Vision Pro website, aiming to replicate the design and functionality using the following technologies: 
+  
+ - HTML: Structuring the web content. 
+ - CSS: Styling the user interface. 
+ - JavaScript: Enhancing interactivity. 
+ - Canvas: Utilized for specific graphical elements. 
+ - GSAP (GreenSock Animation Platform): For smooth animations. 
+ - Locomotive Scroll: Creating a smooth scroll experience. 
+  
+ # Installation and Usage 
+  
+ To run this project locally, follow these steps: 
+  
+ 1. Clone the repository: 
+  
+    bash 
+    git clone https://github.com/dev-akhilesh/Apple-Vision-Pro.git 
+  
+ 2. Navigate to the project directory: 
+  
+    bash 
+    cd Apple-Vision-Pro 
+  
+ 3. Open the index.html file in your web browser. 
+  
+ 4. Explore the Apple Vision Pro clone, interact with the elements, and experience the smooth animations. 
+  
+ ## Credits 
+ Apple Vision Pro original website: https://www.apple.com/apple-vision-pro/ 
 
-## <p align = "center">Link :  https://monic-19.github.io/apple-vision-pro/</p>
-
-## <p align = "center">Website Layout :</p>
+# <p align = "center">Website Layout :</p>
 
 <br><br>
 
@@ -45,8 +77,10 @@
 <img width="1440" alt="Screenshot 2023-07-13 at 2 15 04 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/a08886a4-d52d-4ea0-b058-6ecaf362eed7">
 <img width="1440" alt="Screenshot 2023-07-13 at 2 15 15 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/999decf9-ba20-438c-b0ee-5d096590f090">
 <img width="1440" alt="Screenshot 2023-07-13 at 2 15 21 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/bbccdcd8-f5ba-4616-8554-b9bc934a6c8d">
-<img width="1440" alt="Screenshot 2023-07-13 at 2 15 28 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/93b97b92-8ef9-41c0-af6f-e31c7d8826d9">
-<img width="1440" alt="Screenshot 2023-07-13 at 2 15 40 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/c279cccd-2126-42b9-ac95-375650b7d837">
-<img width="1440" alt="Screenshot 2023-07-13 at 2 15 47 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/a2355601-a30c-4ffc-9f4a-11a997ab4c2d">
-<img width="1440" alt="Screenshot 2023-07-13 at 2 15 55 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/bd47db9c-9d32-4782-ad85-daf8d2cc0d6d">  
+<img width="1440" alt="Screenshot 2023-07-13 at 2 15 28 PM" src="https://github.com/AdarshRai0/Apple-Vision-Clone/assets/91651054/c7bff223-2e93-45ce-a7a8-be9840eef5b4">
+<img width="1440" alt="Screenshot 2023-07-13 at 2 15 40 PM" src="https://github.com/AdarshRai0/Apple-Vision-Clone/assets/91651054/d8cdc5d6-3684-4d64-a0c6-cd5f8c441bf1">
+<img width="1440" alt="Screenshot 2023-07-13 at 2 15 40 PM" src="https://github.com/AdarshRai0/Apple-Vision-Clone/assets/91651054/4ed52cf5-f6f3-4465-9bd9-2cb507374ffa">
+<img width="1440" alt="Screenshot 2023-07-13 at 2 15 47 PM" src="https://github.com/AdarshRai0/Apple-Vision-Clone/assets/91651054/627d8413-adb3-47f9-9d80-412f2fd49c5b">
+
+
 </p>
