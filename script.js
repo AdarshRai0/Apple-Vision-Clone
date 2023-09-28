@@ -880,13 +880,8 @@ var tl17 = gsap.timeline({
 });
 
 tl17.to(".page17 h1", {
-<<<<<<< HEAD
   opacity: 1,
 });
-=======
-  opacity :1
-})
->>>>>>> e21a5ab9de3d2f7c1ffbc1efbcc49edc47c5cca7
 // inspect prevention
 document.oncontextmenu = () =>{
   // alert("Don't try right click")
@@ -914,8 +909,4 @@ document.onkeydown = e =>{
     // alert("Don't try to paste anything to page")
     return false;
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e21a5ab9de3d2f7c1ffbc1efbcc49edc47c5cca7
