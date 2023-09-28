@@ -80,8 +80,8 @@ Welcome to the innovative world of Apple Vision Pro – where technology meets v
 <img width="1440" alt="Screenshot 2023-07-13 at 2 15 28 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/93b97b92-8ef9-41c0-af6f-e31c7d8826d9">
 <img width="1440" alt="Screenshot 2023-07-13 at 2 15 40 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/c279cccd-2126-42b9-ac95-375650b7d837">
 <img width="1440" alt="Screenshot 2023-07-13 at 2 15 47 PM" src="https://github.com/Monic-19/apple-vision-pro/assets/118365854/a2355601-a30c-4ffc-9f4a-11a997ab4c2d"> 
-  
-  ![image](https://github.com/AdarshRai0/Apple-Vision-Clone/assets/91651054/628c6d52-9a35-430e-b875-e4891cce8b6b)
+![Screenshot 2023-09-28 190605](https://github.com/AdarshRai0/Apple-Vision-Clone/assets/91651054/627d8413-adb3-47f9-9d80-412f2fd49c5b)
+
 
 
 </p>
