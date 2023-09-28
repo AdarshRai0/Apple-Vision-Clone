@@ -1,12 +1,11 @@
 function loco() {
-
   gsap.registerPlugin(ScrollTrigger);
 
   // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
 
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".main"),
-    smooth: true
+    smooth: true,
   });
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
@@ -14,21 +13,29 @@ function loco() {
   // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
   ScrollTrigger.scrollerProxy(".main", {
     scrollTop(value) {
-      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y;
     }, // we don't have to define a scrollLeft because we're only scrolling vertically.
     getBoundingClientRect() {
-      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
     },
     // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-    pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+    pinType: document.querySelector(".main").style.transform
+      ? "transform"
+      : "fixed",
   });
 
-  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
-
 }
 loco();
 
@@ -40,9 +47,9 @@ gsap.to(".page video", {
     scroller: `.main`,
   },
   onStart: () => {
-    document.querySelector(".page video").play()
-  }
-})
+    document.querySelector(".page video").play();
+  },
+});
 
 gsap.to(".page", {
   scrollTrigger: {
@@ -51,8 +58,8 @@ gsap.to(".page", {
     end: `bottom top`,
     scroller: `.main`,
     pin: true,
-  }
-})
+  },
+});
 
 gsap.to(".page-bottom", {
   scrollTrigger: {
@@ -61,103 +68,104 @@ gsap.to(".page-bottom", {
     end: `bottom top`,
     scroller: `.main`,
   },
-  opacity: 0
-})
-
+  opacity: 0,
+});
 
 var tl = gsap.timeline({
   scrollTrigger: {
     trigger: `.page1`,
     start: `top top`,
-    end : `70% top`,
+    end: `70% top`,
     scrub: 1,
     scroller: `.main`,
     // markers :true,
-    pin: true
-  }
-})
-
+    pin: true,
+  },
+});
 
 tl.to(".page1 h1", {
   top: "-50%",
-})
-
+});
 
 var tl1 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page2`,
     start: `top top`,
     // end : "bottom top",
-    end : `70% top`,
+    end: `70% top`,
     scrub: 1,
     scroller: `.main`,
     pin: true,
-  }
-})
-
+  },
+});
 
 tl1.to(".page2 h1", {
-  top: `-50%`
-})
+  top: `-50%`,
+});
 
 var tl2 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page3`,
     start: `top top`,
     // end : "bottom top",
-    end : `70% top`,
+    end: `70% top`,
     scrub: 1,
     scroller: `.main`,
     pin: true,
-  }
-})
-
+  },
+});
 
 tl2.to(".page3 h1", {
-  top: `-50%`
-})
+  top: `-50%`,
+});
 
 var tl3 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page4`,
     start: `top top`,
     // end : "bottom top",
-    end : `70% top`,
+    end: `70% top`,
     scrub: 1,
     scroller: `.main`,
     pin: true,
-  }
-})
-
+  },
+});
 
 tl3.to(".page4 h1", {
-  top: `-50%`
-})
+  top: `-50%`,
+});
 
 var tl4 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page6`,
     start: `top top`,
-    end : `70% top`,
+    end: `70% top`,
     scrub: 1,
     scroller: `.main`,
     pin: true,
-  }
-})
+  },
+});
 
+tl4.to(
+  ".page6 h1",
+  {
+    top: `-50%`,
+  },
+  "a"
+);
 
-tl4.to(".page6 h1", {
-  top: `-50%`
-}, 'a')
+tl4.to(
+  ".page6 h3",
+  {
+    top: `-50%`,
+  },
+  "a"
+);
 
-tl4.to(".page6 h3", {
-  top: `-50%`
-}, 'a')
-
-tl4.to(".page6 video" , {
-  padding : "6vh",
-  opacity : 1,
-})
+tl4.to(".page6 video", {
+  padding: "6vh",
+  opacity: 1,
+});
 
 var tl5 = gsap.timeline({
   scrollTrigger: {
@@ -166,23 +174,29 @@ var tl5 = gsap.timeline({
     scrub: 1,
     scroller: `.main`,
     pin: true,
-  }
-})
+  },
+});
 
+tl5.to(
+  ".page7 h1",
+  {
+    top: `-50%`,
+  },
+  "b"
+);
 
-tl5.to(".page7 h1", {
-  top: `-50%`
-}, 'b')
+tl5.to(
+  ".page7 h3",
+  {
+    top: `-50%`,
+  },
+  "b"
+);
 
-tl5.to(".page7 h3", {
-  top: `-50%`
-}, 'b')
-
-tl5.to(".page7 video" , {
-  padding : "6vh",
-  opacity : 1,
-})
-
+tl5.to(".page7 video", {
+  padding: "6vh",
+  opacity: 1,
+});
 
 var tl6 = gsap.timeline({
   scrollTrigger: {
@@ -191,23 +205,29 @@ var tl6 = gsap.timeline({
     scrub: 1,
     scroller: `.main`,
     pin: true,
-  }
-})
+  },
+});
 
+tl6.to(
+  ".page8 h1",
+  {
+    top: `-50%`,
+  },
+  "c"
+);
 
-tl6.to(".page8 h1", {
-  top: `-50%`
-}, 'c')
+tl6.to(
+  ".page8 h3",
+  {
+    top: `-50%`,
+  },
+  "c"
+);
 
-tl6.to(".page8 h3", {
-  top: `-50%`
-}, 'c')
-
-tl6.to(".page8 video" , {
-  padding : "6vh",
-  opacity : 1,
-})
-
+tl6.to(".page8 video", {
+  padding: "6vh",
+  opacity: 1,
+});
 
 var tl7 = gsap.timeline({
   scrollTrigger: {
@@ -216,24 +236,29 @@ var tl7 = gsap.timeline({
     scrub: 1,
     scroller: `.main`,
     pin: true,
-  }
-})
+  },
+});
 
+tl7.to(
+  ".page9 h1",
+  {
+    top: `-50%`,
+  },
+  "d"
+);
 
-tl7.to(".page9 h1", {
-  top: `-50%`
-}, 'd')
+tl7.to(
+  ".page9 h3",
+  {
+    top: `-50%`,
+  },
+  "d"
+);
 
-tl7.to(".page9 h3", {
-  top: `-50%`
-}, 'd')
-
-tl7.to(".page9 video" , {
-  padding : "6vh",
-  opacity : 1,
-})
-
-
+tl7.to(".page9 video", {
+  padding: "6vh",
+  opacity: 1,
+});
 
 var tl8 = gsap.timeline({
   scrollTrigger: {
@@ -242,19 +267,24 @@ var tl8 = gsap.timeline({
     scrub: 1,
     scroller: `.main`,
     pin: true,
-  }
-})
+  },
+});
 
+tl8.to(
+  ".page21 h1",
+  {
+    top: `-50%`,
+  },
+  "e"
+);
 
-tl8.to(".page21 h1", {
-  top: `-50%`
-}, 'e')
-
-tl8.to(".page21 h3", {
-  top: `-50%`
-}, 'e')
-
-
+tl8.to(
+  ".page21 h3",
+  {
+    top: `-50%`,
+  },
+  "e"
+);
 
 function canvas() {
   const canvas = document.querySelector(".page11 canvas");
@@ -263,13 +293,11 @@ function canvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-
   window.addEventListener("resize", function () {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     render();
   });
-
 
   function files(index) {
     var data = `
@@ -529,7 +557,6 @@ function canvas() {
     );
   }
   ScrollTrigger.create({
-
     trigger: ".page11 canvas",
     pin: true,
     // markers:true,
@@ -542,24 +569,21 @@ function canvas() {
 
 canvas();
 
+function canvas1() {
+  const canvas = document.querySelector(".page26 canvas");
+  const context = canvas.getContext("2d");
 
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-function canvas1(){
-const canvas = document.querySelector(".page26 canvas");
-const context = canvas.getContext("2d");
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+  });
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-
-window.addEventListener("resize", function () {
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-render();
-});
-
-function files(index) {
-var data = `
+  function files(index) {
+    var data = `
 .//images/Vision00001.png
 .//images/Vision00002.png
 .//images/Vision00003.png
@@ -586,78 +610,74 @@ var data = `
 .//images/Vision00024.png
 .//images/Vision00025.png
 `;
-return data.split("\n")[index];
-}
+    return data.split("\n")[index];
+  }
 
-const frameCount = 25;
+  const frameCount = 25;
 
-const images = [];
-const imageSeq = {
-frame: 1,
-};
+  const images = [];
+  const imageSeq = {
+    frame: 1,
+  };
 
-for (let i = 0; i < frameCount; i++) {
-const img = new Image();
-img.src = files(i);
-images.push(img);
-}
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = files(i);
+    images.push(img);
+  }
 
-gsap.to(imageSeq, {
-frame: frameCount - 1,
-snap: "frame",
-ease: `none`,
-scrollTrigger: {
-  scrub: 0.15,
-  trigger: `.page26`,
-  //   set start end according to preference
-  start: `top top`,
-  end: `80% top`,
-  scroller: `.main`,
-},
-onUpdate: render,
-});
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: `none`,
+    scrollTrigger: {
+      scrub: 0.15,
+      trigger: `.page26`,
+      //   set start end according to preference
+      start: `top top`,
+      end: `80% top`,
+      scroller: `.main`,
+    },
+    onUpdate: render,
+  });
 
-images[1].onload = render;
+  images[1].onload = render;
 
-function render() {
-scaleImage(images[imageSeq.frame], context);
-}
+  function render() {
+    scaleImage(images[imageSeq.frame], context);
+  }
 
-function scaleImage(img, ctx) {
-var canvas = ctx.canvas;
-var hRatio = canvas.width / img.width;
-var vRatio = canvas.height / img.height;
-var ratio = Math.max(hRatio, vRatio);
-var centerShift_x = (canvas.width - img.width * ratio) / 2;
-var centerShift_y = (canvas.height - img.height * ratio) / 2;
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-ctx.drawImage(
-  img,
-  0,
-  0,
-  img.width,
-  img.height,
-  centerShift_x,
-  centerShift_y,
-  img.width * ratio,
-  img.height * ratio
-);
-}
-ScrollTrigger.create({
-
-trigger: ".page26",
-pin: true,
-// markers:true,
-scroller: `.main`,
-//   set start end according to preference
-start: `top top`,
-end: `80% top`,
-});
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+  ScrollTrigger.create({
+    trigger: ".page26",
+    pin: true,
+    // markers:true,
+    scroller: `.main`,
+    //   set start end according to preference
+    start: `top top`,
+    end: `80% top`,
+  });
 }
 canvas1();
-
-
-
 
 var tl9 = gsap.timeline({
   scrollTrigger: {
@@ -667,13 +687,12 @@ var tl9 = gsap.timeline({
     scroller: `.main`,
     // pin: true,
     // markers :true
-  }
-})
+  },
+});
 
 tl9.to(".page29 .off", {
-  opacity : 0
-})
-
+  opacity: 0,
+});
 
 var tl10 = gsap.timeline({
   scrollTrigger: {
@@ -683,14 +702,12 @@ var tl10 = gsap.timeline({
     scroller: `.main`,
     // pin: true,
     // markers :true
-  }
-})
+  },
+});
 
 tl10.to(".page30 .off", {
-  opacity : 0
-})
-
-
+  opacity: 0,
+});
 
 var tl11 = gsap.timeline({
   scrollTrigger: {
@@ -699,86 +716,78 @@ var tl11 = gsap.timeline({
     scrub: 1,
     scroller: `.main`,
     // markers :true
-  }
-})
+  },
+});
 
 tl11.to(".page31 img", {
-  opacity : 1
-})
-
+  opacity: 1,
+});
 
 let picture = 1;
 
-function moveLeft(){
-
+function moveLeft() {
   picture--;
 
-  if (picture < 1){
-    picture = 3
+  if (picture < 1) {
+    picture = 3;
   }
 
-  console.log("pic" + picture)
+  console.log("pic" + picture);
 
   let pos = document.querySelector(".page23 .center");
 
-  if(picture === 1){
+  if (picture === 1) {
     set1();
-  }
-
-  else if(picture === 2){
+  } else if (picture === 2) {
     set2();
-  }
-
-  else if(picture === 3){
+  } else if (picture === 3) {
     set3();
   }
-
 }
 
-function moveRight(){
-
+function moveRight() {
   picture++;
 
-  if (picture > 3){
-    picture =1
+  if (picture > 3) {
+    picture = 1;
   }
 
-  console.log("pic" + picture)
+  console.log("pic" + picture);
 
   let pos = document.querySelector(".page23 .center");
 
-  if(picture === 1){
-    pos.style.backgroundImage = "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_mt_hood__bowcnbltk57m_medium_2x.jpg')";
+  if (picture === 1) {
+    pos.style.backgroundImage =
+      "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_mt_hood__bowcnbltk57m_medium_2x.jpg')";
+  } else if (picture === 2) {
+    pos.style.backgroundImage =
+      "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_white_sand__d9yi9qfevrue_medium_2x.jpg')";
+  } else if (picture === 3) {
+    pos.style.backgroundImage =
+      "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_moon__cddspuen58eq_medium_2x.jpg')";
   }
-
-  else if(picture === 2){
-    pos.style.backgroundImage = "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_white_sand__d9yi9qfevrue_medium_2x.jpg')";
-  }
-
-  else if(picture === 3){
-    pos.style.backgroundImage = "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_moon__cddspuen58eq_medium_2x.jpg')";
-  }
-
 }
 
-function set1(){
-  console.log("set1 called")
-  document.querySelector(".page23 .center").style.backgroundImage = "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_mt_hood__bowcnbltk57m_medium_2x.jpg')";
+function set1() {
+  console.log("set1 called");
+  document.querySelector(".page23 .center").style.backgroundImage =
+    "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_mt_hood__bowcnbltk57m_medium_2x.jpg')";
   document.querySelector(".page23 .bottom .b1").style.color = "white";
   document.querySelector(".page23 .bottom .b2").style.color = "#86868B";
   document.querySelector(".page23 .bottom .b3").style.color = "#86868B";
 }
 
-function set2(){
-  document.querySelector(".page23 .center").style.backgroundImage = "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_white_sand__d9yi9qfevrue_medium_2x.jpg')";
+function set2() {
+  document.querySelector(".page23 .center").style.backgroundImage =
+    "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_white_sand__d9yi9qfevrue_medium_2x.jpg')";
   document.querySelector(".page23 .bottom .b2").style.color = "white";
   document.querySelector(".page23 .bottom .b1").style.color = "#86868B";
   document.querySelector(".page23 .bottom .b3").style.color = "#86868B";
 }
 
-
-function set3(){
-  document.querySelector(".page23 .center").style.backgroundImage = "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_moon__cddspuen58eq_medium_2x.jpg')";
+function set3() {
+  document.querySelector(".page23 .center").style.backgroundImage =
+    "url('https://www.apple.com/v/apple-vision-pro/a/images/overview/visionos/environment_moon__cddspuen58eq_medium_2x.jpg')";
   document.querySelector(".page23 .bottom .b3").style.color = "white";
   document.querySelector(".page23 .bottom .b1").style.color = "#86868B";
   document.querySelector(".page23 .bottom .b2").style.color = "#86868B";
@@ -788,93 +797,116 @@ var tl12 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page12`,
     start: `0% top`,
-    end : "bottom bottom",
+    end: "bottom bottom",
     scrub: 1,
     scroller: `.main`,
     // markers :true
-  }
-})
+  },
+});
 
 tl12.to(".page12 h1", {
-  opacity :1
-})
-
+  opacity: 1,
+});
 
 var tl13 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page13`,
     start: `0% top`,
-    end : "bottom bottom",
+    end: "bottom bottom",
     scrub: 1,
     scroller: `.main`,
     // markers :true
-  }
-})
+  },
+});
 
 tl13.to(".page13 h1", {
-  opacity :1
-})
-
+  opacity: 1,
+});
 
 var tl14 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page14`,
     start: `0% top`,
-    end : "bottom bottom",
+    end: "bottom bottom",
     scrub: 1,
     scroller: `.main`,
     // markers :true
-  }
-})
+  },
+});
 
 tl14.to(".page14 h1", {
-  opacity :1
-})
-
+  opacity: 1,
+});
 
 var tl15 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page15`,
     start: `0% top`,
-    end : "bottom bottom",
+    end: "bottom bottom",
     scrub: 1,
     scroller: `.main`,
     // markers :true
-  }
-})
+  },
+});
 
 tl15.to(".page15 h1", {
-  opacity :1
-})
-
+  opacity: 1,
+});
 
 var tl16 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page16`,
     start: `0% top`,
-    end : "bottom bottom",
+    end: "bottom bottom",
     scrub: 1,
     scroller: `.main`,
     // markers :true
-  }
-})
+  },
+});
 
 tl16.to(".page16 h1", {
-  opacity :1
-})
-
+  opacity: 1,
+});
 
 var tl17 = gsap.timeline({
   scrollTrigger: {
     trigger: `.page17`,
     start: `0% top`,
-    end : "bottom bottom",
+    end: "bottom bottom",
     scrub: 1,
     scroller: `.main`,
     // markers :true
-  }
-})
+  },
+});
 
 tl17.to(".page17 h1", {
-  opacity :1
-})
+  opacity: 1,
+});
+// inspect prevention
+document.oncontextmenu = () =>{
+  // alert("Don't try right click")
+
+  return false;
+}
+
+document.onkeydown = e =>{
+  if(e.key == "F12"){
+    // alert("Don't try to inspect elements")
+
+    return false;
+  }
+  if(e.ctrlKey && e.key == "u"){
+    // alert("Don't try to view page source")
+
+    return false;
+  }
+  if(e.ctrlKey && e.key == "c"){
+    // alert("Don't try to copy anything to page")
+
+    return false;
+  }
+  if(e.ctrlKey && e.key == "v"){
+    // alert("Don't try to paste anything to page")
+    return false;
+  }
+}
